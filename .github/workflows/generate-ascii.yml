@@ -4,12 +4,15 @@ on: push
 
 jobs: 
     ascii_job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout Repo
-          uses: actions/checkout@v4  
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4  
         
-        - name: Executing Shell Script
-          run: |
-            chmod +x ./generate-ascii.sh
-            ./generate-ascii.sh
+      - name: List Repo File
+        run: ls -lrta 
+
+      - name: Executing Shell Script
+        run: |
+          chmod +x ./generate-ascii.sh
+          ./generate-ascii.sh
